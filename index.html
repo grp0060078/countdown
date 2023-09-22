@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="countdown"></div>
+
+    <script>
+        function countdown(number, callback) {
+            if (number === 0) {
+                callback();
+            } else {
+                setTimeout(function () {
+                    document.getElementById('countdown').innerHTML = number;
+                    countdown(number - 1, callback);
+                }, 1000);
+            }
+        }
+
+        countdown(10, function () {
+            setTimeout(function () {
+                document.getElementById('countdown').innerHTML = "Happy Independence Day!";
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>
